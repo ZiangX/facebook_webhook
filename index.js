@@ -73,7 +73,7 @@ app.post("/webhook", (req, res) => {
     body.entry.forEach(function (entry) {
       // Gets the body of the webhook event
       let webhookEvent = entry.messaging[0];
-      console.log(webhookEvent);
+      console.log('webhookEvent', webhookEvent);
 
       // Get the sender PSID
       // What is a PSID?
