@@ -168,7 +168,7 @@ function callSendAPI(senderPsid, response) {
   // The page access token we have generated in your app settings
   const PAGE_ACCESS_TOKEN =
     "EAAGhHhXv6E8BAMQHExZCDFu9pCcG1iS3YsTMcZCuIQ83Whn1as54QLF7BZCQ5kT9LYMPvXu4XpuT76NNwM8ClEZB6tfGjK2cjePv2AoK68lbf8ZBS4KPSbm75NNFBd8snDLjS8ighaG6RHS3fZAJhk6pJg8MDx59FTtZBzWmVenRKza953Xu7Gh"
-    
+
   // Construct the message body
   let requestBody = {
     recipient: {
@@ -187,7 +187,7 @@ function callSendAPI(senderPsid, response) {
     },
     (err, _res, _body) => {
       if (!err) {
-        console.log("Message sent!", _res, _body);
+        console.log("Message sent!", _body);
       } else {
         console.error("Unable to send message:" + err);
       }
