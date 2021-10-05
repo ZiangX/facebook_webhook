@@ -167,8 +167,8 @@ function handlePostback(senderPsid, receivedPostback) {
 function callSendAPI(senderPsid, response) {
   // The page access token we have generated in your app settings
   const PAGE_ACCESS_TOKEN =
-    "EAAGhHhXv6E8BADjZCu6H2Ite97fDsllPo2NB4IJVflB1FTtwotPll2kcEIqhcW8vlUKsYqY3sOu1pSm8JxcmD02HRZAWu8wZCkeazNqEYuR7hIZBGVhsVNvjr7BKMQsRijnU6JPRnyzmcOtgZBiS6OS9CAqQHWfWOKyjXgKpNyvce8hkjB7ee";
-
+    "EAAGhHhXv6E8BAMQHExZCDFu9pCcG1iS3YsTMcZCuIQ83Whn1as54QLF7BZCQ5kT9LYMPvXu4XpuT76NNwM8ClEZB6tfGjK2cjePv2AoK68lbf8ZBS4KPSbm75NNFBd8snDLjS8ighaG6RHS3fZAJhk6pJg8MDx59FTtZBzWmVenRKza953Xu7Gh"
+    
   // Construct the message body
   let requestBody = {
     recipient: {
@@ -180,14 +180,14 @@ function callSendAPI(senderPsid, response) {
   // Send the HTTP request to the Messenger Platform
   request(
     {
-      uri: "https://graph.facebook.com/v2.6/me/messages",
+      uri: "https://graph.facebook.com/v12.0/me/messages",
       qs: { access_token: PAGE_ACCESS_TOKEN },
       method: "POST",
       json: requestBody,
     },
     (err, _res, _body) => {
       if (!err) {
-        console.log("Message sent!", err, _res, _body);
+        console.log("Message sent!", _res, _body);
       } else {
         console.error("Unable to send message:" + err);
       }
