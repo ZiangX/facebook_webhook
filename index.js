@@ -20,7 +20,7 @@
  'use strict';
 
  // Use dotenv to read .env vars into Node
- require('dotenv').config();
+//  require('dotenv').config();
  
  // Imports dependencies and set up http server
  const
