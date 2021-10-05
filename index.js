@@ -8,6 +8,10 @@ const express = require("express"),
 // Sets server port and logs message on success
 app.listen(process.env.PORT || 1337, () => console.log("webhook is listening"));
 
+app.get("/", function (req, res) {
+  res.send('hello world')
+})
+
 // Creates the endpoint for our webhook
 app.post("/webhook", (req, res) => {
   let body = req.body;
