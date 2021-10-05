@@ -167,7 +167,7 @@ function handlePostback(senderPsid, receivedPostback) {
 function callSendAPI(senderPsid, response) {
   // The page access token we have generated in your app settings
   const PAGE_ACCESS_TOKEN =
-    "EAAGhHhXv6E8BAGZCWm9YXGC0EfmaVT51VTe6ZAjVE9QQFePXyennHfZC7PPGFVinD2gNvtxqLRqDvkJBshlYUuZBqX6I9W1PN1hrDK0NwzZA42UWHDppZBZAKy5nyBtTwo6OZApYif7VDyl4QWiKdNSZAowoVHdAMXeSxrVCG6qSsab4WUxnsl4uW";
+    "EAAGhHhXv6E8BADjZCu6H2Ite97fDsllPo2NB4IJVflB1FTtwotPll2kcEIqhcW8vlUKsYqY3sOu1pSm8JxcmD02HRZAWu8wZCkeazNqEYuR7hIZBGVhsVNvjr7BKMQsRijnU6JPRnyzmcOtgZBiS6OS9CAqQHWfWOKyjXgKpNyvce8hkjB7ee";
 
   // Construct the message body
   let requestBody = {
