@@ -40,7 +40,7 @@ app.get("/", function (_req, res) {
 });
 
 // Adds support for GET requests to our webhook
-app.get("/webhook", (req, res) => {
+app.get("/fbbwebhook", (req, res) => {
   // Your verify token. Should be a random string.
   const VERIFY_TOKEN = "hausvalet";
 
@@ -64,11 +64,12 @@ app.get("/webhook", (req, res) => {
 });
 
 // Creates the endpoint for your webhook
-app.post("/webhook", (req, res) => {
+app.post("/fbbwebhook", (req, res) => {
   let body = req.body;
 
   // Checks if this is an event from a page subscription
   if (body.object === "page") {
+
     // Iterates over each entry - there may be multiple if batched
     body.entry.forEach(function (entry) {
       // Gets the body of the webhook event
@@ -167,7 +168,7 @@ function handlePostback(senderPsid, receivedPostback) {
 function callSendAPI(senderPsid, response) {
   // The page access token we have generated in your app settings
   const PAGE_ACCESS_TOKEN =
-    "EAAGhHhXv6E8BAMQHExZCDFu9pCcG1iS3YsTMcZCuIQ83Whn1as54QLF7BZCQ5kT9LYMPvXu4XpuT76NNwM8ClEZB6tfGjK2cjePv2AoK68lbf8ZBS4KPSbm75NNFBd8snDLjS8ighaG6RHS3fZAJhk6pJg8MDx59FTtZBzWmVenRKza953Xu7Gh"
+    "EAAGhHhXv6E8BAPKsZBoZB1RyqdVzzZAp76sDtwnOZAHDJyKGzZC5DB7SbQEKhE8dZAHARNp7iNt1wY8IWUTsGXGYgyuJ7f8Bs72vPIKXNwuIWqA0kZAmYvJz5E9ImFZBv4ZA9tg6tT3NJXO93Ig1VLHiqBXgHZBQoNZAKFzrnbopZCMQtPM5BNTIXx9V"
 
   // Construct the message body
   let requestBody = {
@@ -196,6 +197,6 @@ function callSendAPI(senderPsid, response) {
 }
 
 // listen for requests :)
-var listener = app.listen(process.env.PORT, function () {
+var listener = app.listen(8080, function () {
   console.log("Your app is listening on port " + listener.address().port);
 });
